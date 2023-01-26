@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <style>
+        img{
+            width: 30px;
+        }
+        body{
+            background-color: black;
+            color: antiquewhite;
+            
+        }
+        #content{ 
+            left: 40%;
+            display: block;
+            position: absolute;
+            width: 240px;
+            top:40%;
+           }
+        #username,#password,#email{
+            display: inline;
+        }
+        #usrnm,#pw,#eml{
+            width: 125px;
+             height: 10px;
+            background-color: #282828; 
+            font-family: sans-serif;
+            color: antiquewhite;                 
+        }
+        #email{
+            margin-left: 26px;    
+        }
+        #password{
+            margin-left: 3px;
+        }
+        #pw,#eml{
+            margin-top: 10px;
+        }
+        #su{
+            padding-top: 10px;
+            margin-left: 125px;
+        }
+        #submit{
+            width: 80px;
+            height: 25px;
+            padding: 5px;
+            background-color:#0C0032;
+            border: none;
+            color: antiquewhite;
+        }
+        #submit:hover{
+            cursor: c;
+            background-color: #190061;
+           
+        }
+        #submit:active {
+            box-shadow: 0 1px #190061;
+            transform: translateY(2px);
+        }
+        
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <div id="back">
+        <a href="homepage.html"><img src="back.png" alt=""></a>
+    </div>
+    <div id="content">
+        <div id="username">
+            <label for="username" id="lbusrnm">Username:</label>
+            <input type="text" name="username" id="usrnm">
+        </div>
+        <div id="email">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="eml">
+        </div>
+        <div id="password">
+            <label for="password">Password:</label>
+            <input type="text" name="password" id="pw">
+        </div>
+        <div id="su"> <button id="submit">Submit</button></div>
+    </div>
+</body>
+</html>

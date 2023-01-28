@@ -57,4 +57,3 @@ function enterbutt(){
     guess="";
    // currentfloor++;
 }
-function

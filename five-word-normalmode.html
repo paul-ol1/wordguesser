@@ -8,111 +8,108 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <style>
-        html{}
-        body{
-  
-            
-        }
-        #header{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            border-bottom: solid white 0.1px;
-        }
-        #inputs{
-            
-            margin-top: 30px;
-        }
-        #content{
-            display: flex;
-            position: absolute;
-            align-items: center;
-            justify-content: center;
-            width: 50vw;
-            flex-direction: column;
-            margin: 0;
-            left: 25vw;
-            top: 0%;
+
+ 
 
 
-
-            padding: 0px; 
-            margin-bottom: 0px;
-            
-        }
-        #htp{
-            margin-right:140px ;
-            margin-top: 20px;
-            
-        }
-        #title{
-            width: 100%;
-            display: flex;
-            background-color: red;
-            background-image: linear-gradient(45deg,#E35DD0, #BF28AE, #9D3592, #7B1F7E, #69227B, #532A81, #693EB7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
-            -moz-background-clip: text;
-            -moz-text-fill-color: transparent;
-            align-items: center;
-            justify-content: center;
-            background-color: #532A81;
-
-            
-        }
     </style>
 </head>
 <body>
     <div id="content">
         <div id="header">
             <h1 id="title">Whatever</h2>
+            <button id="settings" class="head" onclick="revealsetting()">
+                <span class="fa fa-cog" style="font-size:14px"></i>
+            </button>
+            <button class="head" id="htp">
+                <span class="fa-regular fa-circle-info" style="font-size:14px"></span>
+            </button>
         </div>
-        
+        <div id="settings-pane" hidden>
+        </div>
                 <div id="inputs">
                     <div id="firstrow">
-                        <input type="text" id="a0" class="a" maxlength="1">
-                        <input type="text" id="a1" class="a" maxlength="1">
-                        <input type="text" id="a2" class="a" maxlength="1">
-                        <input type="text" id="a3" class="a" maxlength="1">
-                        <input type="text" id="a4" class="a" maxlength="1">
+                        <input type="text" id="a0" class="a" readonly="readonly">
+                        <input type="text" id="a1" class="a" readonly="readonly">
+                        <input type="text" id="a2" class="a" readonly="readonly">
+                        <input type="text" id="a3" class="a" readonly="readonly">
+                        <input type="text" id="a4" class="a" readonly="readonly">
                     </div>
                     <div id="secondrow">
-                        <input type="text" id="b0" class="b" maxlength="1">
-                        <input type="text" id="b1" class="b" maxlength="1">
-                        <input type="text" id="b2" class="b" maxlength="1">
-                        <input type="text" id="b3" class="b" maxlength="1">
-                        <input type="text" id="b4" class="b" maxlength="1">
+                        <input type="text" id="b0" class="b" readonly="readonly">
+                        <input type="text" id="b1" class="b" readonly="readonly">
+                        <input type="text" id="b2" class="b" readonly="readonly">
+                        <input type="text" id="b3" class="b" readonly="readonly">
+                        <input type="text" id="b4" class="b" readonly="readonly">
                     </div>
                     <div id="thirdrow">
-                        <input type="text" id="c0" class="c" maxlength="1">
-                        <input type="text" id="c1" class="c" maxlength="1">
-                        <input type="text" id="c2" class="c" maxlength="1">
-                        <input type="text" id="c3" class="c" maxlength="1">
-                        <input type="text" id="c4" class="c" maxlength="1">
+                        <input type="text" id="c0" class="c" readonly="readonly">
+                        <input type="text" id="c1" class="c" readonly="readonly">
+                        <input type="text" id="c2" class="c" readonly="readonly">
+                        <input type="text" id="c3" class="c" readonly="readonly">
+                        <input type="text" id="c4" class="c" readonly="readonly">
                     </div>
                     <div id="fourthrow">
-                        <input type="text" id="d0" class="d" maxlength="1">
+                        <input type="text" id="d0" class="d" readonly="readonly">
                         <input type="text" id="d1" class="d" readonly="readonly">
-                        <input type="text" id="d2" class="d" maxlength="1">
-                        <input type="text" id="d3" class="d" maxlength="1">
-                        <input type="text" id="d4" class="d" maxlength="1">
+                        <input type="text" id="d2" class="d" readonly="readonly">
+                        <input type="text" id="d3" class="d" readonly="readonly">
+                        <input type="text" id="d4" class="d" readonly="readonly">
                     </div>
                     <div id="fifthrow">
-                        <input type="text" id="e0" class="e" maxlength="1">
-                        <input type="text" id="e1" class="e" maxlength="1">
-                        <input type="text" id="e2" class="e" maxlength="1">
-                        <input type="text" id="e3" class="e" maxlength="1">
-                        <input type="text" id="e4" class="e" maxlength="1">
+                        <input type="text" id="e0" class="e" readonly="readonly">
+                        <input type="text" id="e1" class="e" readonly="readonly">
+                        <input type="text" id="e2" class="e" readonly="readonly">
+                        <input type="text" id="e3" class="e" readonly="readonly">
+                        <input type="text" id="e4" class="e" readonly="readonly">
                     </div>
                     <div id="sixthrow">
-                        <input type="text" id="f0" class="f" maxlength="1">
-                        <input type="text" id="f1" class="f" maxlength="1">
-                        <input type="text" id="f2" class="f" maxlength="1">
-                        <input type="text" id="f3" class="f" maxlength="1">
-                        <input type="text" id="f4" class="f" maxlength="1">
+                        <input type="text" id="f0" class="f" readonly="readonly">
+                        <input type="text" id="f1" class="f" readonly="readonly">
+                        <input type="text" id="f2" class="f" readonly="readonly">
+                        <input type="text" id="f3" class="f" readonly="readonly">
+                        <input type="text" id="f4" class="f" readonly="readonly">
                     </div>
                 </div>
+        <div id="keyboard">
+            <div id="firstkeyboardrow">
+                <button id="a" class="key" onclick="input(this)">A</button>
+                <button id="b"class="key" onclick="input(this)">Z</button>
+                <button id="e" class="key" onclick="input(this)">E</button>
+                <button id="r" class="key" onclick="input(this)">R</button>
+                <button id="t" class="key" onclick="input(this)">T</button>
+                <button id="y" class="key" onclick="input(this)">Y</button>
+                <button id="u" class="key" onclick="input(this)">U</button>
+                <button id="i" class="key" onclick="input(this)">I</button>
+                <button id="o" class="key" onclick="input(this)">O</button>
+                <button id="p" class="key" onclick="input(this)">P</button>
+            </div>
+            <div id="secondkeyboardrow">
+                <button id="q" class="key2" onclick="input(this)">Q</button>
+                <button id="s" class="key2" onclick="input(this)">S</button>
+                <button id="d" class="key2" onclick="input(this)">D</button>
+                <button id="f" class="key2" onclick="input(this)">F</button>
+                <button id="g" class="key2" onclick="input(this)">G</button>
+                <button id="h" class="key2" onclick="input(this)">H</button>
+                <button id="j" class="key2" onclick="input(this)">J</button>
+                <button id="k" class="key2" onclick="input(this)">K</button>
+                <button id="l" class="key2" onclick="input(this)">L</button>
+                
+            </div>
+            <div id="thirdkeyboardrow">
+                <button id="backspace" class="key3" onclick="deletebutt()"> <img src="backspace.png" alt="" id="bsc"></button>
+                <button id="w" class="key3" onclick="input(this)">W</button>
+                <button id="x" class="key3" onclick="input(this)">X</button>
+                <button id="c" class="key3" onclick="input(this)">C</button>
+                <button id="v" class="key3" onclick="input(this)">V</button>
+                <button id="b" class="key3" onclick="input(this)">B</button>
+                <button id="n" class="key3" onclick="input(this)">N</button>
+                <button id="m" class="key3" onclick="input(this)">M</button>
+                <button id="enter" class="key3" onclick="enterbutt()">Enter</button>
+            </div>
+        </div>
     </div>
-  
+<script src="https://kit.fontawesome.com/5a31844d8f.js" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
 </body>
 </html>

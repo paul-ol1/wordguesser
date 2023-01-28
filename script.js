@@ -1,5 +1,9 @@
+
 let currentfloor = 0;
 let currentposition =-1;
+let guess="";
+let required =5;
+
 function revealsetting(){
     const validator = document.getElementById("settings-pane").hidden
     if(validator){
@@ -39,6 +43,18 @@ function deletebutt(){
 }
 
 function enterbutt(){
-    currentfloor++;
-    
+    const inputs = document.getElementById("inputs");
+    for(let x =0; x<required; x++){
+    guess+= inputs.children[currentfloor].children[x].value;
+    console.log(guess)
+    }
+    if(guess.length<5){
+        alert("not enough words")
+    }
+    else{
+
+    }
+    guess="";
+   // currentfloor++;
 }
+function

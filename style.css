@@ -22,12 +22,13 @@
             flex-direction: row;
             width: 100%;
             border-bottom: solid black 0.1px;
-            min-width: 450px;
+            min-width: 550px;
         }
-        #inputs {
-            min-width: 350px;
+        #inputs {    
+            min-width: 550px;
             margin-top: 30px;
-            margin-left: 50px;
+            text-align: center;
+        
             
         }
         a {
@@ -38,7 +39,7 @@
             width: 30px;
         }
 
-        .a,.b,.c,.d,.e,.f{
+        .cell{
             width: 50px;
             height: 50px;
             margin-right: 3px;
@@ -145,3 +146,22 @@
             position: absolute;
             z-index: 9;
         }
+
+        .l-count{
+            width: 40px;
+            height: 40px;
+            border-radius: 7px;
+            font-size: 1rem;
+            border: none;
+            background-color: #e7ebf1;
+        }
+        .l-count:hover {
+            cursor: pointer;
+            
+            background-image: linear-gradient(45deg, #E35DD0, #BF28AE, #9D3592, #7B1F7E, #69227B, #532A81, #693EB7);
+            -webkit-background-clip: text;           
+            -webkit-text-fill-color: transparent;
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+        }
+

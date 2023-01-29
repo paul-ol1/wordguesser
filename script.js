@@ -4,6 +4,28 @@ let currentposition =-1;
 let guess="";
 let required =5;
 
+function modwords(callingelem){
+    let inputs = document.getElementById("inputs");
+    const wlength = parseInt(callingelem.textContent);
+    required = wlength;
+    currentfloor = 0;
+    currentposition =-1;
+    guess="";
+    inputs.innerHTML="";
+    for(let x =0; x<6;x++){
+        let newdiv = document.createElement('div');
+        newdiv.className= 'row';
+        inputs.appendChild(newdiv);
+        for(let y =0; y<wlength;y++){
+        let newcell = document.createElement('input')
+        newcell.type = "text";
+        newcell.className="cell";
+        newcell.readOnly = "readonly";
+        newdiv.appendChild(newcell);
+        }
+    }
+}
+
 function revealsetting(){
     const validator = document.getElementById("settings-pane").hidden
     if(validator){
@@ -48,11 +70,11 @@ function enterbutt(){
     guess+= inputs.children[currentfloor].children[x].value;
     console.log(guess)
     }
-    if(guess.length<5){
-        alert("not enough words")
+    if(guess.length<required){
+        alert("not enough words");
     }
     else{
-
+    currentfloor++;
     }
     guess="";
    // currentfloor++;

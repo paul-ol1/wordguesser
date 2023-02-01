@@ -70,6 +70,7 @@
             -moz-text-fill-color: transparent;
             align-items: center;
             justify-content: center;
+            margin-left: 50px;
             background-color: #532A81;
         
         
@@ -81,7 +82,7 @@
             
         }
         
-        .key,.key2,.key3 {
+        .key,.key2,.key3{
             background-color: #e7ebf1;
             cursor: pointer;
             width: 50px;

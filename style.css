@@ -56,6 +56,8 @@
 
 
 
+
+
         .key:hover{
             opacity: 0.7;
         }
@@ -92,8 +94,10 @@
             min-height: 40px;
             color: black;
             font-size: 1.5rem;
+
                 
         }
+
         
         .key:hover {
             opacity: 0.7;
@@ -114,6 +118,7 @@
             -webkit-text-fill-color: transparent;
             -moz-background-clip: text;
             -moz-text-fill-color: transparent;
+            
         }
         
         #backspace,#enter{

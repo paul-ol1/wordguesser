@@ -143,6 +143,7 @@ function deletebutt(){
 }
 // it accepts the user entry
 function enterbutt(){
+    
     const inputs = document.getElementById("inputs");
     for(let x =0; x<required; x++){
     guess+= inputs.children[currentfloor].children[x].value;
@@ -153,6 +154,7 @@ function enterbutt(){
     }
     else{
     currentfloor++;
+    currentposition=-1;
     }
     guess="";
    // currentfloor++;

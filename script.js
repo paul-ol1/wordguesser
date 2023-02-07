@@ -1,14 +1,16 @@
-
 let currentfloor = 0;
 let currentposition =-1;
 let guess="";
 let required =5;
 let darkmode = false;
+let inputs = document.getElementById("inputs");
 let body = document.querySelector('body');
 let cellelem = document.getElementsByClassName('cell');
 let buttons = document.querySelectorAll('button');
 let header = document.getElementById('header');
 let dmtoggle= document.getElementById("dark-mode");
+let currentanswers= fivew;
+let answer= currentanswers[Math.floor(Math.random() * currentanswers.length)]
 
 //function to switch to darkmode
 function darkmodeswitch(){
@@ -42,18 +44,134 @@ function darkmodeswitch(){
 
 // function to modify amount of letter in words according to user 
 function modwords(callingelem){
-    let inputs = document.getElementById("inputs");
     const wlength = parseInt(callingelem.textContent);
+    switch(wlength){
+        case 4:
+            currentanswers= fourw;
+            genwords();
+            break;
+        case 5:
+            currentanswers= fivew;
+            genwords();
+            break;
+        case 6:
+            currentanswers= sixw;
+            genwords();
+            break;
+        case 7:
+            currentanswers= sevenw;
+            genwords();
+            break;
+        case 8:
+            currentanswers= eightw;
+            genwords();
+            break;
+        case 9:
+            currentanswers= ninew;
+            genwords();
+            break;
+        case 10:
+            currentanswers= tenw;
+            genwords();
+            break;
+        
+            default:
+                console.log("base case");
+
+    }
+
     required = wlength;
+    createcells();
+}
+
+// reveal settings to the user by hiding the keyboard and cells and revealing the settings
+function revealsetting(){
+    const validator = document.getElementById("settings-pane").hidden
+    if(validator){
+        document.getElementById("settings-pane").hidden = false;
+        document.getElementById("inputs").hidden=true; 
+        document.getElementById("keyboard").hidden=true;
+    }
+    else{
+        document.getElementById("settings-pane").hidden=true;
+        document.getElementById("inputs").hidden=false; 
+        document.getElementById("keyboard").hidden=false;
+    }
+    
+}
+// cells: show the input of the user by accepting the letter in the button pressed by user
+function input(callingelem){
+    const letter= callingelem.textContent;
+    for(let x =0; x< inputs.children[currentfloor].children.length;x++){
+       if((inputs.children[currentfloor].children[x].value.trim() == "")){
+        inputs.children[currentfloor].children[x].value = letter;
+        currentposition =currentposition+1;
+        console.log(currentposition)
+        break;
+        
+       } 
+    }
+
+}
+// backspace: it deletes the text content of the last unempty cell
+function deletebutt(){
+    if(!(currentposition<0)){
+    inputs.children[currentfloor].children[currentposition--].value="";
+    console.log(currentposition)}
+    
+}
+// it accepts the user entry
+function enterbutt(){
+    for(let x =0; x<required; x++){
+    guess+= inputs.children[currentfloor].children[x].value;
+    }
+    guess= guess.toLowerCase();
+    if(guess.length<required){
+        alert("not enough words");
+    }
+    if(guess.length== required && answer==guess){
+        console.log("correct")
+    }
+    if(guess.length==required && answer!=guess){
+        const guessarr = guess.split('');
+        const ansarr = answer.split('');
+        for(let x =0; x< guessarr.length;x++){
+            //if a letter is in the answer 
+            if(ansarr.includes(guessarr[x])){
+                letter_in_answer_pos= ansarr.indexOf(guessarr[x]);
+                ansarr[letter_in_answer_pos]='';
+                if(x==letter_in_answer_pos){
+                    inputs.children[currentfloor].children[x].style.backgroundColor = "green";
+                }
+                else{
+                    inputs.children[currentfloor].children[x].style.backgroundColor = "yellow";
+                }
+
+
+            }
+        }
+        currentfloor++;
+    }
+    guess ="";
+}
+
+function genwords(){
     currentfloor = 0;
     currentposition =-1;
     guess="";
     inputs.innerHTML="";
-    for(let x =0; x<6;x++){
+    currentanswers= currentanswers.map(x=>x.toLowerCase());
+    answer= currentanswers[Math.floor(Math.random() * currentanswers.length)];
+    console.log(answer);
+}
+
+function createcells(){
+    inputs.innerHTML="";
+        for(let x =0; x<6;x++){
         let newdiv = document.createElement('div');
         newdiv.className= 'row';
         inputs.appendChild(newdiv);
-        for(let y =0; y<wlength;y++){
+        for(let y =0; y<required;y++){
         let newcell = document.createElement('input')
         newcell.type = "text";
         newcell.className="cell";
@@ -71,9 +189,7 @@ function modwords(callingelem){
         newcell.style.borderradius= "7px";
         }
     }
-    /* when the user modifies the amount lf word they want the css does not apply
-     to the newly inserted or removed cells so this helps control that */
-    //if darkmode was switched on
+        //if darkmode was switched on
         if(dmtoggle.checked){
         body.style.backgroundColor="#0f172a";
         body.style.color = "white";
@@ -100,62 +216,4 @@ function modwords(callingelem){
             buttons[i].style.color = "black";}        
     }
 
-    
-}
-
-// reveal settings to the user by hiding the keyboard and cells and revealing the settings
-function revealsetting(){
-    const validator = document.getElementById("settings-pane").hidden
-    if(validator){
-        document.getElementById("settings-pane").hidden = false;
-        document.getElementById("inputs").hidden=true; 
-        document.getElementById("keyboard").hidden=true;
-    }
-    else{
-        document.getElementById("settings-pane").hidden=true;
-        document.getElementById("inputs").hidden=false; 
-        document.getElementById("keyboard").hidden=false;
-    }
-    
-}
-// cells: show the input of the user by accepting the letter in the button pressed by user
-function input(callingelem){
-    const letter= callingelem.textContent;
-    const inputs = document.getElementById("inputs");
-    for(let x =0; x< inputs.children[currentfloor].children.length;x++){
-       if((inputs.children[currentfloor].children[x].value.trim() == "")){
-        inputs.children[currentfloor].children[x].value = letter;
-        currentposition =currentposition+1;
-        console.log(currentposition)
-        break;
-        
-       } 
-    }
-
-}
-// backspace: it deletes the text content of the last unempty cell
-function deletebutt(){
-    const inputs = document.getElementById("inputs");
-    if(!(currentposition<0)){
-    inputs.children[currentfloor].children[currentposition--].value="";
-    console.log(currentposition)}
-    
-}
-// it accepts the user entry
-function enterbutt(){
-    
-    const inputs = document.getElementById("inputs");
-    for(let x =0; x<required; x++){
-    guess+= inputs.children[currentfloor].children[x].value;
-    console.log(guess)
-    }
-    if(guess.length<required){
-        alert("not enough words");
-    }
-    else{
-    currentfloor++;
-    currentposition=-1;
-    }
-    guess="";
-   // currentfloor++;
 }

@@ -18,6 +18,7 @@
             
         }
         #header{
+        
             display: flex;
             flex-direction: row;
             width: 100%;
@@ -171,3 +172,12 @@
             -moz-text-fill-color: transparent;
         }
 
+ 
+    #give-up, #next{
+        width: 100px;
+        margin: 10px;
+        height: 29px;
+        border: none;
+        border-radius: 7px;
+        
+    }

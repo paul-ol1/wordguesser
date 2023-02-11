@@ -10,7 +10,10 @@ let buttons = document.querySelectorAll('button');
 let header = document.getElementById('header');
 let dmtoggle= document.getElementById("dark-mode");
 let currentanswers= fivew;
-let answer= currentanswers[Math.floor(Math.random() * currentanswers.length)]
+let win_lose_pane= document.getElementById('win-lose');
+let answer= "";
+genwords();
+
 
 //function to switch to darkmode
 function darkmodeswitch(){
@@ -45,34 +48,28 @@ function darkmodeswitch(){
 // function to modify amount of letter in words according to user 
 function modwords(callingelem){
     const wlength = parseInt(callingelem.textContent);
+
     switch(wlength){
         case 4:
             currentanswers= fourw;
-            genwords();
             break;
         case 5:
             currentanswers= fivew;
-            genwords();
             break;
         case 6:
             currentanswers= sixw;
-            genwords();
             break;
         case 7:
             currentanswers= sevenw;
-            genwords();
             break;
         case 8:
             currentanswers= eightw;
-            genwords();
             break;
         case 9:
             currentanswers= ninew;
-            genwords();
             break;
         case 10:
             currentanswers= tenw;
-            genwords();
             break;
         
             default:
@@ -81,6 +78,8 @@ function modwords(callingelem){
     }
 
     required = wlength;
+    deletecells();
+    genwords();
     createcells();
 }
 
@@ -122,15 +121,25 @@ function deletebutt(){
 }
 // it accepts the user entry
 function enterbutt(){
+    // concat the letters to get a user answer 
     for(let x =0; x<required; x++){
     guess+= inputs.children[currentfloor].children[x].value;
     }
+    // convert the user answer to lowercase to compare to the predetermined answer 
     guess= guess.toLowerCase();
+    // when the user enters less letters than the answer has
     if(guess.length<required){
         alert("not enough words");
     }
+    // when the user's guess is correct
     if(guess.length== required && answer==guess){
-        console.log("correct")
+        console.log("correct");
+        for(let x =0; x< guess.length;x++){
+                inputs.children[currentfloor].children[x].style.backgroundColor = "green";
+                }
+        onwin();
+        
+        
     }
     if(guess.length==required && answer!=guess){
         const guessarr = guess.split('');
@@ -156,17 +165,18 @@ function enterbutt(){
 }
 
 function genwords(){
-    currentfloor = 0;
-    currentposition =-1;
-    guess="";
-    inputs.innerHTML="";
     currentanswers= currentanswers.map(x=>x.toLowerCase());
     answer= currentanswers[Math.floor(Math.random() * currentanswers.length)];
     console.log(answer);
 }
 
-function createcells(){
+function deletecells(){
+    currentfloor = 0;
+    currentposition =-1;
+    guess="";
     inputs.innerHTML="";
+}
+function createcells(){
         for(let x =0; x<6;x++){
         let newdiv = document.createElement('div');
         newdiv.className= 'row';
@@ -189,31 +199,34 @@ function createcells(){
         newcell.style.borderradius= "7px";
         }
     }
-        //if darkmode was switched on
-        if(dmtoggle.checked){
-        body.style.backgroundColor="#0f172a";
-        body.style.color = "white";
-        header.style.borderBottom= "solid white 0.1px";
-        for (let i = 0; i < cellelem.length; i++) {
-	        cellelem[i].style.backgroundColor = "#475569";
-            cellelem[i].style.color = "white";}
-            
-        for (let i = 0; i < buttons.length; i++) {
-	        buttons[i].style.backgroundColor = "#475569";
-            buttons[i].style.color = "white";}        
-    }
-    //if it was on light mode
-            if(!dmtoggle.checked){
-        body.style.backgroundColor="white";
-        body.style.color = "black";
-        header.style.borderBottom= "solid black 0.1px";
-        for (let i = 0; i < cellelem.length; i++) {
-	        cellelem[i].style.backgroundColor = "#e7ebf1";
-            cellelem[i].style.color = "black";}
-            
-        for (let i = 0; i < buttons.length; i++) {
-	        buttons[i].style.backgroundColor = "#e7ebf1";
-            buttons[i].style.color = "black";}        
-    }
+    darkmodeswitch();
+       
+}
+
+function onwin(){
+    document.getElementById("inputs").hidden=true; 
+    document.getElementById("keyboard").hidden=true;
+    win_lose_pane.hidden = false;
+    let yw = document.createElement('h3');
+    yw.textContent = "You win!!"
+    let buttdivs = document.createElement('div');
+    buttdivs.id="aftergame";
+    let nextw = document.createElement('button');
+    let giveup = document.createElement('button');
+    nextw.id="next";
+    nextw.textContent="Next Word";
+    giveup.id="give-up";
+    giveup.textContent="Give Up"
+    buttdivs.appendChild(nextw);
+    buttdivs.appendChild(giveup);
+    win_lose_pane.appendChild(yw);
+    win_lose_pane.appendChild(buttdivs);
+    darkmodecheck();
+    // whatever my way to calculate score is 
+    /*
+    deletecells();
+    genwords();
+    createcells();*/
 
 }
+

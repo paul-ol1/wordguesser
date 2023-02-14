@@ -1,0 +1,16 @@
+#content{
+    font-family: sans-serif;
+    display: block;
+    position: absolute;
+    text-align: center;
+    left: 40%;
+    top: 40%;
+}
+.mode{
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    font-weight: 900;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 30px;
+}

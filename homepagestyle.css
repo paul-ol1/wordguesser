@@ -3,8 +3,8 @@
     display: block;
     position: absolute;
     text-align: center;
-    left: 40%;
-    top: 40%;
+    left: calc(50% - (150px/2));
+    top: calc(50% - (30px));
 }
 .mode{
     font-size: 0.8rem;
@@ -13,4 +13,19 @@
     margin-bottom: 10px;
     width: 150px;
     height: 30px;
+}
+.innerbutt{
+    margin: 5px;
+}
+.innerbutt:hover{
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #E35DD0, #BF28AE, #9D3592, #7B1F7E, #69227B, #532A81, #693EB7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+a{
+    text-decoration: none;
+    color: black;
 }

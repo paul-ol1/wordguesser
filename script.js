@@ -230,3 +230,6 @@ function onwin(){
 
 }
 
+function starttimer(){
+    let start = Date.now();
+}

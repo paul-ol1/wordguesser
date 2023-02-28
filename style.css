@@ -41,6 +41,7 @@
         }
 
         .cell{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             width: 50px;
             height: 50px;
             margin-right: 3px;
@@ -67,6 +68,9 @@
             display: flex;
             background-color: red;
             background-image: linear-gradient(45deg, #E35DD0, #BF28AE, #9D3592, #7B1F7E, #69227B, #532A81, #693EB7);
+            background-size: 100%;
+            background-repeat: repeat;
+            
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             -moz-background-clip: text;
@@ -74,7 +78,7 @@
             align-items: center;
             justify-content: center;
             margin-left: 50px;
-            background-color: #532A81;
+            background-color: white;
         
         
                 }
@@ -86,6 +90,7 @@
         }
         
         .key,.key2,.key3{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #e7ebf1;
             cursor: pointer;
             width: 50px;
@@ -141,6 +146,7 @@
         }
         .head:hover{
             cursor: pointer;
+            background-color: white;
             background-image: linear-gradient(45deg, #E35DD0, #BF28AE, #9D3592, #7B1F7E, #69227B, #532A81, #693EB7);
             -webkit-background-clip: text;       
             -webkit-text-fill-color: transparent;
@@ -172,12 +178,86 @@
             -moz-text-fill-color: transparent;
         }
 
- 
-    #give-up, #next{
-        width: 100px;
-        margin: 10px;
-        height: 29px;
+    #give-up,#next,#giveup,#trya{
         border: none;
-        border-radius: 7px;
+        border-radius: 5px;
+
+    }
+    #give-up:hover,#giveup:hover{
+        cursor: pointer;
+        background-color: red;
         
     }
+        
+    #next:hover,#trya:hover {
+        cursor: pointer;
+        background-color: green;
+        }
+
+#win_lose {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    position: absolute;
+    
+    top: 100px;
+    right: calc(50% - 200px);
+    flex-direction: column;
+}
+
+#upper {
+    flex-basis: 25%;
+    border-start-start-radius: 5px;
+    border-start-end-radius: 5px;
+    background-color: #e7ebf1;
+}
+
+#lower {
+    flex-basis: 75%;
+    border-right: 1px solid #e7ebf1;
+    border-bottom: 1px solid #e7ebf1;
+    border-left: 1px solid #e7ebf1;
+    border-end-start-radius: 5px;
+    border-end-end-radius: 5px;
+    background-color: white;
+
+}
+
+#innerupper {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+#wins_r,
+#games_played {
+    padding: 10px;
+    flex-basis: 50%;
+    border-bottom: solid white 1px;
+}
+
+#wins_r {
+    border-left: solid white 1px;
+}
+
+#innerlower {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#currstreak,
+#beststreak {
+    padding: 10px;
+    flex-basis: 50%;
+    border-bottom: solid white 1px;
+}
+
+#beststreak {
+    border-left: solid white 1px;
+}
+
+#time{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

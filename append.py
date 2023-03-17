@@ -1,4 +1,4 @@
-filepath = "5l_words.txt"
+filepath = "4l_words.js"
 with open(filepath) as f:
     lines = f.read().splitlines()
 

@@ -1,9 +1,16 @@
 //variables
 let inputs = document.getElementById("inputs");
-let base;
-let end;
+let base="";
+let end="";
+let guess="";
+let attempt= false;
+let previoustxt="";
 // read the array of word into a personal array
 let words = fourw;
+let previous= inputs.children[1];
+let currentfloor= inputs.children[2];
+let currentposition =-1;
+let allpossibilities = [];
 // convert each word to uppercase
 words.map(x=> {
 
@@ -37,10 +44,27 @@ for(let i =0;i<words.length;i++){
         }
     }
 }
+function validator(word,check){
+    if(word[0]!=check[0] && word[1]==check[1] && word[2]==check[2] && word[3]==check[3]){
+        return true;
+    }
+    if(word[0]==check[0] && word[1]!=check[1] && word[2]==check[2] && word[3]==check[3]){
+        return true;
+    }
+    if(word[0]==check[0] && word[1]==check[1] && word[2]!=check[2] && word[3]==check[3]){
+        return true;
+    }
+    if(word[0]==check[0] && word[1]==check[1] && word[2]==check[2] && word[3]!=check[3]){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 function selectwords(){
 base= Math.floor(Math.random()*words.length);
 base= words[base];
-let allpossibilities = [];
+
 for(let x =0; x< newwords.length;x++){
     if(newwords[x].word==base){
         allpossibilities.push(newwords[x].word);
@@ -75,7 +99,7 @@ for(let x=0;x< allpossibilities.length;x++){
 }
 
 end = allpossibilities[Math.floor(Math.random()*allpossibilities.length)];
-
+previoustxt=base;
 
 /* for(let y=0;y<newwords[words].next.length;y++){
             allpossibilities.push()
@@ -122,6 +146,55 @@ console.log(allpossibilities);*/}
         last.children[x].value= end[x];
     }
     }
+    function input(callingelem){
+    const letter= callingelem.textContent;
+    for(let x =0; x< currentfloor.children.length;x++){
+        /* go through the text box at the current level if the text box is
+        empty inset the currently clicked letter*/
+       if((currentfloor.children[x].value.trim() == "")){
+        currentfloor.children[x].value = letter;
+        currentposition =currentposition+1;
+        // exit the loop when we reach the first empty boc
+        break;
+       } 
+    }
+}
+    function deletebutt(){
+    if(!(currentposition<0)){
+    // the text input at the curr position gets deleted
+    currentfloor.children[currentposition--].value="";
+    }
+}
+function enterbutt(){
+    
+    guess="";
+    // concat the letters to get a user answer 
+    for(let x =0; x<4; x++){
+    guess+= currentfloor.children[x].value;
+    }
+    console.log(guess);
+    // when the user enters less letters than the answer has
+    if(guess.length<4){
+        alert("not enough words");
+    }
+    if(!words.includes(guess)){
+        alert("this word isn't in the dictionary")
+    }
+    if(words.includes(guess) && !validator(guess,previoustxt)){
+        alert("you can't change more than a letter")}
+        
+    if(words.includes(guess) && validator(guess,previoustxt)){
+        attempt=true;
+        previous.hidden=false;
+        for(let x =0;x<4;x++){
+            previous.children[x].value=guess[x];
+            currentfloor.children[x].value="";
+        }
+        currentposition=-1;
+        previoustxt=guess;
+    }
+    }
+
     
     selectwords();
     insertcontents();

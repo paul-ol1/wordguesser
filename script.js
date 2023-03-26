@@ -222,7 +222,7 @@ function createcells(){
         newdiv.className= 'row';
         inputs.appendChild(newdiv);
         for(let y =0; y<required;y++){
-        let newcell = document.createElement('input')
+        let newcell = document.createElement('input');
         newcell.type = "text";
         newcell.className="cell";
         newcell.readOnly = "readonly";

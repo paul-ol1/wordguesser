@@ -23,7 +23,7 @@ norm.appendChild(scorelink);
 function hardresp(){
 norm.innerHTML="";
 hard.innerHTML="";
-startlink.href="hardmode.html";
+startlink.href="wordmania.html";
 hard.appendChild(startlink);
 hard.appendChild(scorelink);
 }

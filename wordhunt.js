@@ -185,7 +185,7 @@ function enterbutt(){
         
     if(words.includes(guess) && validator(guess,previoustxt)){
         attempt=true;
-        previous.hidden=false;
+        previous.sn=false;
         for(let x =0;x<4;x++){
             previous.children[x].value=guess[x];
             currentfloor.children[x].value="";

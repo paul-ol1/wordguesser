@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Hunt</title>
-    <link rel="stylesheet" href="homepagestyle.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name</title>
+    <link rel="stylesheet" href="homepagestyle.css" />
+  </head>
+  <body>
     <div class="" id="content">
-        <h2>Choose Game</h2>
-        <div class="cont" id="wordsleuth">
-            <button id="ws" class="mode" onclick="normresp()">Word Sleuth</button>
-            <div id="n_choices"></div>
-        </div>
-        <div class="cont" id="wordmania">
-            <button id="wm" class="mode" onclick="hardresp()">Word Mania</button>
-            <div id="h_choices" ></div>
-        </div>
-        <div class="cont" id="wordhunt">
-            <button id="wh" class="mode" onclick="hardresp()">Word Hunt</button>
-        </div>
+      <h2>Choose Game</h2>
+      
+      <div class="cont" id="Wordle">
+        <a href="/wordle"><button id="wd" class="mode">
+          Wordle
+        </button></a>
+        
+      </div>
+      <div class="cont" id="wordhunt">
+        <a href="/wordhunt"><button id="wh" class="mode">
+          Word Hunt
+        </button></a>
+      </div>
+      <div class="cont" id="wordmania">
+        <a href="/wordmania"><button id="wm" class="mode" >
+          Word Mania
+        </button></a>
+      </div>
     </div>
     <script src="homepagescript.js"></script>
-</body>
+  </body>
 </html>

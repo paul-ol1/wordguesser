@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Hunt</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+                .cell{
+            width: 50px;
+            height: 50px;
+            margin-right: 6px;
+            margin-bottom: 10px;
+            border: none;
+            background-color: #e7ebf1;
+            text-align: center;
+            color: black;
+            font-size: 1.5rem;
+            border-radius: 7px;
+            
+        }
+    </style>
 </head>
 <body>
     <div id="content">
@@ -41,41 +56,41 @@
                 <input type="text" class="cell" readonly="readonly">
             </div>
                 </div>
-                <div id="keyboard">
-                    <div id="firstkeyboardrow">
-                        <button id="a" class="key" onclick="input(this)">A</button>
-                        <button id="b" class="key" onclick="input(this)">Z</button>
-                        <button id="e" class="key" onclick="input(this)">E</button>
-                        <button id="r" class="key" onclick="input(this)">R</button>
-                        <button id="t" class="key" onclick="input(this)">T</button>
-                        <button id="y" class="key" onclick="input(this)">Y</button>
-                        <button id="u" class="key" onclick="input(this)">U</button>
-                        <button id="i" class="key" onclick="input(this)">I</button>
-                        <button id="o" class="key" onclick="input(this)">O</button>
-                        <button id="p" class="key" onclick="input(this)">P</button>
+                <div id="key keyboard">
+                    <div id="firstkey keyboardrow">
+                        <button id="a" class="key key1" onclick="input(this)">A</button>
+                        <button id="b" class="key key1" onclick="input(this)">Z</button>
+                        <button id="e" class="key key1" onclick="input(this)">E</button>
+                        <button id="r" class="key key1" onclick="input(this)">R</button>
+                        <button id="t" class="key key1" onclick="input(this)">T</button>
+                        <button id="y" class="key key1" onclick="input(this)">Y</button>
+                        <button id="u" class="key key1" onclick="input(this)">U</button>
+                        <button id="i" class="key key1" onclick="input(this)">I</button>
+                        <button id="o" class="key key1" onclick="input(this)">O</button>
+                        <button id="p" class="key key1" onclick="input(this)">P</button>
                     </div>
-                    <div id="secondkeyboardrow">
-                        <button id="q" class="key2" onclick="input(this)">Q</button>
-                        <button id="s" class="key2" onclick="input(this)">S</button>
-                        <button id="d" class="key2" onclick="input(this)">D</button>
-                        <button id="f" class="key2" onclick="input(this)">F</button>
-                        <button id="g" class="key2" onclick="input(this)">G</button>
-                        <button id="h" class="key2" onclick="input(this)">H</button>
-                        <button id="j" class="key2" onclick="input(this)">J</button>
-                        <button id="k" class="key2" onclick="input(this)">K</button>
-                        <button id="l" class="key2" onclick="input(this)">L</button>
+                    <div id="secondkey keyboardrow">
+                        <button id="q" class="key key2" onclick="input(this)">Q</button>
+                        <button id="s" class="key key2" onclick="input(this)">S</button>
+                        <button id="d" class="key key2" onclick="input(this)">D</button>
+                        <button id="f" class="key key2" onclick="input(this)">F</button>
+                        <button id="g" class="key key2" onclick="input(this)">G</button>
+                        <button id="h" class="key key2" onclick="input(this)">H</button>
+                        <button id="j" class="key key2" onclick="input(this)">J</button>
+                        <button id="k" class="key key2" onclick="input(this)">K</button>
+                        <button id="l" class="key key2" onclick="input(this)">L</button>
                 
                     </div>
-                    <div id="thirdkeyboardrow">
-                        <button id="backspace" class="key3" onclick="deletebutt()"> <img src="backspace.png" alt="" id="bsc"></button>
-                        <button id="w" class="key3" onclick="input(this)">W</button>
-                        <button id="x" class="key3" onclick="input(this)">X</button>
-                        <button id="c" class="key3" onclick="input(this)">C</button>
-                        <button id="v" class="key3" onclick="input(this)">V</button>
-                        <button id="b" class="key3" onclick="input(this)">B</button>
-                        <button id="n" class="key3" onclick="input(this)">N</button>
-                        <button id="m" class="key3" onclick="input(this)">M</button>
-                        <button id="enter" class="key3" onclick="enterbutt()">Enter</button>
+                    <div id="thirdkey keyboardrow">
+                        <button id="backspace" class="key key3" onclick="deletebutt()"> <img src="backspace.png" alt="" id="bsc"></button>
+                        <button id="w" class="key key3" onclick="input(this)">W</button>
+                        <button id="x" class="key key3" onclick="input(this)">X</button>
+                        <button id="c" class="key key3" onclick="input(this)">C</button>
+                        <button id="v" class="key key3" onclick="input(this)">V</button>
+                        <button id="b" class="key key3" onclick="input(this)">B</button>
+                        <button id="n" class="key key3" onclick="input(this)">N</button>
+                        <button id="m" class="key key3" onclick="input(this)">M</button>
+                        <button id="enter" class="key key3" onclick="enterbutt()">Enter</button>
                     </div>
                 </div>
     </div>
